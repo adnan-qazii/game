@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Win!</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .win-container {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            padding: 40px 30px;
+            text-align: center;
+            margin: 60px auto;
+            max-width: 400px;
+        }
+        .win-title {
+            color: #ff6f61;
+            font-size: 2.5em;
+            margin-bottom: 18px;
+        }
+        .win-score {
+            color: #ffb347;
+            font-size: 1.5em;
+            margin-bottom: 12px;
+        }
+        .play-again {
+            background: linear-gradient(90deg, #ff6f61 0%, #ffb347 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 1.1em;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .play-again:hover {
+            background: linear-gradient(90deg, #ffb347 0%, #ff6f61 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="win-container">
+        <div class="win-title">🏆 You Win! 🏆</div>
+        <div class="win-score">Score: {{ score }}/10</div>
+        <form action="/" method="get">
+            <button class="play-again" type="submit">Play Again</button>
+        </form>
+    </div>
+</body>
+</html>
