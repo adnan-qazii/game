@@ -29,7 +29,7 @@ def generate_question():
 def index():
     if 'score' not in session:
         session['score'] = 0
-    if 'question' not in session or request.method == 'POST':
+    if 'question' not in session or 'answer' not in session:
         session['question'], session['answer'] = generate_question()
     message = ''
     if request.method == 'POST':
@@ -38,13 +38,13 @@ def index():
             if int(user_answer) == session['answer']:
                 session['score'] += 1
                 message = 'Correct!'
+                if session['score'] >= 10:
+                    return redirect(url_for('win'))
+                session['question'], session['answer'] = generate_question()
             else:
                 message = 'Wrong!'
         except:
             message = 'Please enter a valid number.'
-        if session['score'] >= 10:
-            return redirect(url_for('win'))
-        session['question'], session['answer'] = generate_question()
     return render_template('index.html', question=session['question'], score=session['score'], message=message)
 
 @app.route('/win')
