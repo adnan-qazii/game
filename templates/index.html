@@ -9,9 +9,10 @@
 <body>
     <div class="container">
         <h1>🎲 Math Challenge 🎲</h1>
+        {% set progress_width = score|int * 10 %}
         <div class="score-bar">
-                <div class="progress" style="width: {{ score|int * 10 }}%;"></div>
-                <span>{{ score }}/10</span>
+            <div class="progress" style="width: '{{ progress_width }}%';"></div>
+            <span>{{ score }}/10</span>
         </div>
         <div class="question-box">
             <h2>{{ question }}</h2>
