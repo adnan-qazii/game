@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+*.env
+
+# Logs
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+*.DS_Store
+
+# Docker
+.dockerignore
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Misc
+*.bak
+*.swp
+*.tmp
+
+# Database
+*.db
+*.sqlite3
+
+# Coverage
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+
+# Others
+instance/
+.webassets-cache
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.pdf
+
+# Notebooks
+*.ipynb
